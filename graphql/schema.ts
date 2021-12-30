@@ -1,0 +1,25 @@
+import { gql } from "apollo-server-micro";
+
+export const typeDefs = gql`
+	type Link {
+		id: Int
+		title: String
+		description: String
+		url: String
+		category: String
+		imageUrl: String
+		users: [String]
+	}
+
+	type User {
+		id: Int
+		email: String
+		image: String
+		role: String
+	}
+
+	type Query {
+		links: [Link]!
+		users: [User]
+	}
+`;
